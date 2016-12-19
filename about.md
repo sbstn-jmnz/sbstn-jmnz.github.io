@@ -4,12 +4,15 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+I'm a software engineer from Chile. I can help you build scalable software
+better with front-end frameworks and Ruby back-end.
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jekyll" %} /
-[minima](https://github.com/jekyll/minima)
+I have experience in web development projects with the following practices and technologies:
 
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+* Good Object Oriented Design (GoF Patterns)
+* Behavior and Test Driven Development
+* Source code control with Git
+* RESTful API development with best practices
+
+You can download my detailed cv at the following link:
+[CV](https://github.com/jekyll/minima)
