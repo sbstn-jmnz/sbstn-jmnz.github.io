@@ -4,22 +4,19 @@ title:  "Why I don't use WhatsApp"
 date:   2016-12-19 10:18:35 -0300
 categories: misc
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+![image-title-here](http://ind5.ccio.co/HA/JD/VE/bb4cec84d2d5c32c251c143fdb23952d.jpg?iw=300)
+{:class="img-responsive"}
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
 
-Jekyll also offers powerful support for code snippets:
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+Lately I've been treated as an unadapted person by my friends because of my rejection to this message app. They say that a techie professional (as I consider myself) must use this application and they always ask me "Why don't you use WhatsApp?", so here is my answer.
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+In economics there is the well known Law of Diminishing returns, which simply states that at some point the levels of profits gained is less than the amount of money or energy invested.
 
-[jekyll-docs]: http://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+Well, what it has to do with using WhatsApp? In my opinion, and what I see in most of my friends, is that this very powerful app is just too much for the job. Most of them misuse the application with hundreds of meaningless messages and pointless pictures. Finally they productivity decreases reading unnecessary messages.
+
+Last week I was surprised by the average times a person checks on they mobile. The number was 150 times a day! But does this constant checking made any significant impact on they productivity. I highly doubt it.
+
+In my case I work every day in front of my laptop with my cellphone on the desk and often with a tab on Trello, Jira or Slack depending on the project I'm working on, and they do provide a high level of coordination and communication without distracting messages. So whenever someone wants to tell me something I'm totally available. This way I can avoid distractions and people tends to be more accurate on they thoughts, and guess what, I've never missed any party or meeting.
+
+Finally I don't think that this app is useless just because I don't need it, a lot of people don't work in front of a computer and they need a quick way to share pictures and business messages. I know a few cases where this app does make a difference, but they are just a few.
