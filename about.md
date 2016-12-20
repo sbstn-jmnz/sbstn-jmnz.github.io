@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+title: About Me
 permalink: /about/
 ---
 
@@ -9,10 +9,11 @@ better with front-end frameworks and Ruby back-end.
 
 I have experience in web development projects with the following practices and technologies:
 
-* Good Object Oriented Design (GoF Patterns)
-* Behavior and Test Driven Development
-* Source code control with Git
-* RESTful API development with best practices
+* Good Object Oriented Design (GoF Patterns).
+* Behavior and Test Driven Development.
+* Source code control with Git.
+* RESTful API development with best practices.
+* Cloud services/architecture.
 
 You can download my detailed cv at the following link:
 [CV](https://github.com/jekyll/minima)
