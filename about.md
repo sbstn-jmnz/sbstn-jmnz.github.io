@@ -16,4 +16,4 @@ I have experience in web development projects with the following practices and t
 * Cloud services/architecture.
 
 You can download my detailed cv at the following link:
-[CV](https://github.com/jekyll/minima)
+[CV](https://drive.google.com/open?id=0B8i1a62ON0ZCMGQ4dmRyelE4a2M)
