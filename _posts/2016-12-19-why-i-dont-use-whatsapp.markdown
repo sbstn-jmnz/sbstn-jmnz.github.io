@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Why I don't use WhatsApp"
-date:   2016-12-19 10:18:35 -0300
 categories: misc
 ---
 ![image-title-here](http://ind5.ccio.co/HA/JD/VE/bb4cec84d2d5c32c251c143fdb23952d.jpg?iw=300)

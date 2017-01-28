@@ -23,7 +23,9 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  sbstn-jmnz
 linkedin_username: sebastián-jiménez-olguín-695a8828
 google_analytics: UA-58311145-2
-
+collections:
+    javascript:
+      output: true
 sass:
     sass_dir: _sass
     style: compressed
