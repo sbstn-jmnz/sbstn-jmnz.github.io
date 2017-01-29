@@ -1,7 +1,6 @@
 ---
 layout: post
-title:  "Why I don't use WhatsApp"
-categories: misc
+title:  "API's to improve you Balanced Scorecard"
 ---
 ![image-title-here](http://ind5.ccio.co/HA/JD/VE/bb4cec84d2d5c32c251c143fdb23952d.jpg?iw=300)
 {:class="img-responsive"}
