@@ -3,21 +3,28 @@ layout: default
 ---
 
 <div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
+  <h1 class="page-heading">Series</h1>
   {{ content }}
-
+  <ul class="post-list">
+    {% for my_page in site.pages %}
+      {% if my_page.title != 'About Me' %}
+      <li>
+        <h2>
+      <a class="post-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+        </h2>
+      </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+  <h1 class="page-heading">Posts</h1>
+  {{ content }}
   <ul class="post-list">
     {% for post in site.posts %}
       <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
         <h2>
           <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
         </h2>
       </li>
     {% endfor %}
   </ul>
-
 </div>

@@ -11,6 +11,9 @@ google_analytics: UA-58311145-2
 collections:
     javascript:
       output: true
+    solid:
+      output: true
+        
 sass:
     sass_dir: _sass
     style: compressed
