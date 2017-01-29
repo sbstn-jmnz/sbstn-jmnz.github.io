@@ -11,7 +11,7 @@ I have experience in web development projects with the following practices and t
 
 * Good Object Oriented Design (GoF Patterns).
 * Behavior and Test Driven Development.
-* Source code control with Git.
+* Source code control and collaboration with Git.
 * RESTful API development with best practices.
 * Cloud services/architecture.
 
