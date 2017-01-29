@@ -20,7 +20,7 @@ Alright, we all know how a for loop works so we are going to skip that and focus
 
 + As Ruby it is dynamic typed. Variables don't have types, but objects they refer to do.
 
-+ The primitive object types are `"object", "string", "array", "number", "boolean", "function" and "undefined"`. Just write `typeof(album)` and you'll get it's primitive type.
++ The primitive object types are `"object", "string", "array", "number", "boolean", "function" and "undefined"`. Just write `typeof(album)` and you'll get it's primitive type. One very weird situation is that `typeof(NaN)` is "number". Give it a try. So we have to be really careful about when passing the result of a function expecting   
 
 + Classes and types matter even less than in Ruby. JavaScript has no classes, but there are some codding conventions that are used to achieve some of the effects on having classes.
 
@@ -28,7 +28,7 @@ Alright, we all know how a for loop works so we are going to skip that and focus
 
 + Code blocks like `do..end` in Ruby are almost the same in  JavaScript written like `function() {...}`
 
-+ Unlike Ruby, `false`, `null`, `undefined`, empty string `''` and `NaN`(not-a-number) are **falsy**, `true` and all other values are **truthy**. Ruby uses `nil` to mean both "undefined" (a variable that has never been given a value) and "empty" (a value that is always false)
++ Unlike Ruby, `false`, `null`, `undefined`, empty string `''` and `NaN`(not-a-number) are **falsely**, `true` and all other values are **truthy**. By **falsely** and **truthy** we have to think in the returned value of passing it to the `Boolean()`. Remember `typeof(NaN)`?, well is the only `number` that evaluates to `false` when passed to the Boolean function.  
 
 + The keyword `var` limits the scope of the variable to the function in which it appears, otherwise it becomes a global variable.  
 

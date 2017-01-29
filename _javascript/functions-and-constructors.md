@@ -37,7 +37,7 @@ So let's create a new record...
 ```
 When calling `Record` with the `new` keyword, the value of `this` in the function body will be a new JavaScript object that will be returned by the function. This is very similar to `self` inside the `initialize` constructor method. The returned object will have the declared properties which one of them is also a function. The different behavior is when we call `nevermind.full_title;` which is the function itself. In order to call it we must use `nevermind.full_title()`.
 
-One important think to keep in mind it is that, even though this example looks like we are dealing with classes, constructor and instance methods, they just are not. There is nothing in the function that makes it a constructor. All the magic is done by the keyword `new`. Lets see what happens if we call the Record method without the `new` keyword.
+One important think to keep in mind it is that, even though this example looks like we are dealing with classes, and instance methods, there is nothing in the function that makes it a constructor, it is just a simple function. All the magic is done by the keyword `new`, which creates a new object. The common convention is to capitalize the first letter of the functions that are intended to be constructors; therefore, using the `new` keyword. Lets see what happens if we call the Record method without the `new` keyword.
 
 ```javascript
   reload = Record('Reload','1997', 'Metallica')
@@ -45,10 +45,25 @@ One important think to keep in mind it is that, even though this example looks l
   reload.full_title(); // => Uncaught TypeError: Cannot read property 'full_title' of undefined(…)
 ```
 
-The above code is totally legal, but it behavior it is completely different than the expected. Fist the `this` keyword in the function is no longer a new instance of the prototype, in fact it is the global object itself. We can prove it:
+The above code is totally legal, but it behavior it is completely different than the expected. First, the `this` keyword in the function is no longer a new instance of the prototype, in fact it is the *global object* itself, because it is in the most global scope. Then, the value of `reload` is the returned value form the Record function, which happens to be `undefined` unless an explicit return statement is included in the Record object itself.    
 
 ```javascript
   title; // => "Reload"
   full_title; // => "function() {...}"
   full_title(); // => "Reload (Metallica 1997)"
 ```
+The problem is that the global object is responsible for defining important constants and other parts of the JavaScript environment(Infinity ,Nan ,null). If the host environment is the browser, the global object is the the data structure that represents the browser window.
+
+One thing to keep in mind related to constructor functions is the  `Boolean` function. The naming conventions says that we should use it as a constructor, but it is not the case, and it is advised to use it like a regular function to [convert non-boolean values to boolean values](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) instead of new Boolean objects. Like so,
+
+```javascript
+var x = Boolean(NaN) // => false
+if (x) {
+
+}
+var x = new Boolean(NaN) // => Boolean {[[PrimitiveValue]]: false}
+if (x) {
+  console.log("Hooo")
+}
+```
+In the next entry we'll explore the [Prototypal inheritance]()
