@@ -66,4 +66,4 @@ if (x) {
   console.log("Hooo")
 }
 ```
-In the next entry we'll explore the [Prototypal inheritance]()
+In the next entry we'll explore the [Prototypal inheritance]({{ site.baseurl }}{% link _javascript/prototypal-inheritance.md %})
