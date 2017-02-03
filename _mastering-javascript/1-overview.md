@@ -3,6 +3,7 @@ layout: page
 title: Javascript Overview
 image_path: https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Javascript_badge.svg/1000px-Javascript_badge.svg.png
 ---
+
 # Comments
 ```javascript
 // a one line comment
@@ -15,6 +16,7 @@ image_path: https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Javascript
 //* You can't /* nest comments */ SyntaxError */
 ```
 # Variables
+
 Must start with a letter, undersocer(_), or dollar sign($)
 ```javascript
 var a; //declares a variable but its undefined
@@ -22,9 +24,10 @@ var b = 0;
 console.log(b); //0
 console.log(a); //undefined
 console.log(a+b); //NaN
-
 ```
+
 # Constants
+
 `const` keyword same rules as variables, and cannot change value thriugh assigment or be redeclared, and has to be initialized to a value
 ```javascript
 const gravity = 9.8
