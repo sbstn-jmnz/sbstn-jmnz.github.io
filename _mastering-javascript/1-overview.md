@@ -15,6 +15,7 @@ image_path: https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Javascript
 
 //* You can't /* nest comments */ SyntaxError */
 ```
+
 # Variables
 
 Must start with a letter, undersocer(_), or dollar sign($)
@@ -36,6 +37,7 @@ typeof gravity // "number"
 toString.call(gravity) //"[object Number]"
 gravity = 9 // Uncaught TypeError: Assignment to constant variable.(…)
 ```
+
 # Types
 
 - Number
@@ -51,6 +53,7 @@ gravity = 9 // Uncaught TypeError: Assignment to constant variable.(…)
 - Undefined
 
 # Numbers
+
 Floating point arithmetic should be handled with care. Money values should be represented as cents
 ```javascript
 var aNumber = 123
@@ -69,7 +72,9 @@ parseInt("010",8); //octal base 8
 parseInt("010",2); //binary 2
 + "4" // 4
 ```
+
 Handling the `NaN` case
+
 ```javascript
 var underterminedValue = "drums";
 if (isNaN(parseInt(underterminedValue,2)))
@@ -82,13 +87,16 @@ else
   }
 //  handle not a number case
 ```
+
 # Strings
+
 ```javascript
 console.log("Yo soy un hombre pobre, pero con dinero");
 console.log('Por amor o que?');
 console.log('Lineas \n separadas');
 ```
 Wrapper objects
+
 ```javascript
 var s =  new String('dummy');
 console.log(s); // {0: "d", 1: "u", 2: "m", 3: "m", 4: "y", length: 5, [[PrimitiveValue]]: "dummy"
@@ -98,6 +106,7 @@ console.log(nonObject); // 12
 console.log(typeof(nonObject)); //string
 ```
 Helpers
+
 ```javascript
 console.log("Hello.length"); // 5
 console.log('Hello.charAt(1)'); // e
@@ -116,19 +125,25 @@ console.log('Hello'.toUpperCase());
 console.log('Hello'.toLowerCase());
 console.log('Hello   '.trim()); // Hello
 ```
+
 String Interpolation
+
 ```javascript
 var a = 1, b = 2;
 console.log((`Sum of values: ${a + b}`)); //Sum of values: 3
 ```
+
 # Undefined
+
 ```javascript
 var x, y = null
 console.log(y); // null (deliberate non-value)
 console.log(x); // undefined (not assigned)
 ```
+
 # Booleans
 `false`, `0`, `""`, 'NaN', 'null' and  `undefined` are **represented** as false
+
 ```javascript
 console.log(Boolean(false));
 console.log(Boolean(0));
@@ -142,6 +157,7 @@ console.log(false == NaN); // false
 console.log(false == null); // false
 console.log(false == undefined); // false
 ```
+
 ```javascript
 var oBooleanFalse = new Boolean(false);
 console.log(oBooleanFalse); //Boolean {[[PrimitiveValue]]: false}
@@ -150,7 +166,9 @@ if(oBooleanFalse){
 console.log("I am seriously truthy, don't believe me"); // is excecuted!
 }
 ```
+
 Use `valueOf()` to get the value of a Boolean object
+
 ```javascript
 var oBooleanFalse = new Boolean(false);
 if(oBooleanFalse.valueOf()){
@@ -158,9 +176,12 @@ if(oBooleanFalse.valueOf()){
 }else{
   console.log('Test False');
 }
+
 // Test False
 ```
+
 # intanceof operator
+
 This operator solves the problen with the `typeof()` operator, which return object no mater what type of object is used.
 
 ```javascript
@@ -174,14 +195,18 @@ console.log(aStringObj instanceof String); // true
  console.log(aLiteralString instanceof String); // false
  console.log(typeof aLiteralString); // string
 ```
+
 Primite values don't have constructors, so when a method is called on them, they are wrapped on an object first, then called the method.
 
 # Date objects
+
 Javascript don have a Date type. Dates are instances of the Date Object
+
 ```javascript
  var dateObject = Date();
  console.log(dateObject); // Fri Feb 03 2017 12:36:47 GMT-0300 (CLST)
 ```
+
 ```javascript
 var christmasFail = new Date(2015,12,25,0,00,0);
 console.log(christmasFail); //Not December, 0 is january, also 12
@@ -196,12 +221,16 @@ var testDate = new Date(2015,1,31); // Takes the next month valid date
 console.log(testDate); //Tue Mar 03 2015 00:00:00 GMT-0300 (CLST)
 
 ```
+
 ...also works from literal strings...
+
 ```javascript
  var twoThousandSeventeen = new Date("December 01, 2017 00:00:00");
  console.log(twoThousandSeventeen); //Fri Dec 01 2017 00:00:00 GMT-0300 (CLST)
 ```
-#Date methods
+
+# Date methods
+
 ```javascript
 var today = new Date();
 console.log(today.getDate()); // 3
@@ -213,15 +242,18 @@ console.log(today.getSeconds()); // 18
 console.log(today.getTime()); //1486137858583
 console.log(today.getTimezoneOffset()); // 180
 ```
+
 ```javascript
 var start = Date.now();
 for (var i = 0; i < 1000000; i++);
 var end = Date.now();
 console.log(end - start); // 4
 ```
+
 Recomended libraries : **Moment.js**, **Timezone.js**, **date.js**,
 
 # The + operator
+
 ```javascript
 var a = "33"
 console.log(typeof(a)); // string
@@ -229,34 +261,41 @@ a=+a;
 console.log(a); // 33
 console.log(typeof(a)); //number
 ```
+
 ```javascript
 var a = "drums"
 a=+a
 console.log(a); //NaN
 console.log(typeof(a));// number
 ```
+
 ```javascript
 var zero = '';
 zero=+zero
 console.log(zero); // 0
 console.log(typeof zero); // number
 ```
+
 # The ++ and --
+
 **WARNING** see with caution
+
 ```javascript
 var a=0;
 var b=a++
 console.log(a); // 1
 console.log(b); // 0
 ```
+
 **Hint** The order matters
+
 ```javascript
 var a=0;
 var b=++a
 console.log(a); // 1
 console.log(b); // 1
 ```
-#Chained assign
+# Chained assign
 
 ```javascript
 var a,b,c;
@@ -265,6 +304,7 @@ console.log(a); //1
 console.log(b); //1
 console.log(c); //1
 ```
+
 ```javascript
 (function()
 {
@@ -276,8 +316,11 @@ console.log(c); //1
 }());
 // VM2113:4 Uncaught ReferenceError: b is not defined(…)
 ```
+
 # Boolean operators
+
 `AND(&)`, `OR(||)`, and `NOT(!)`
+
 ```javascript
 console.log(true && true); // true
 console.log(true && false); // false
@@ -287,7 +330,9 @@ console.log('Foo' && false); // false
 console.log(false && 'Bar'); // false
 console.log(false && (1==2)); //false
 ```
+
 `OR(||)`
+
 ```javascript
 console.log(true || true); // true
 console.log(true || false); // true
@@ -310,7 +355,9 @@ console.log(0 || false); //false
 console.log(0 || undefined); //undefined
 console.log(0 || NaN); //NaN
 ```
-default values
+
+# Default values
+
 ```javascript
 function greeting(name){
   name = name || 'Juan';
@@ -319,6 +366,7 @@ function greeting(name){
 greeting('Cecilio');
 greeting();
 ```
+
 ```javascript
 var s = new String("string")
 console.log(!s); //false
@@ -334,11 +382,14 @@ console.log(!y); //true
 console.log(!x); //true
 console.log(!w); //true
 ```
-Ternay operators
+
+# Ternay operators
+
 ```javascript
 var age = 26;
 console.log((age > 21) ? "true" : "no"); // true
 ```
+
 ```javascript
 var b = true
 if((a = b)){
@@ -346,6 +397,7 @@ if((a = b)){
   console.log(a);
 }
 ```
+
 ```javascript
 var b = true;
 var a;
@@ -354,6 +406,7 @@ if((a == b)){
   console.log(a);
 }
 ```
+
 ```javascript
 function sayMonth(month){}
 ```
