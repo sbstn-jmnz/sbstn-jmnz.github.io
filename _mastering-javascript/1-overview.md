@@ -15,7 +15,7 @@ image_path: https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Javascript
 /* You can't /* nest comments */ SyntaxError */
 ```
 # Variables
-Must start with a letter, undersocer(_), or dollar sign($),
+Must start with a letter, undersocer(_), or dollar sign($)
 ```javascript
 var a; //declares a variable but its undefined
 var b = 0;
@@ -349,4 +349,7 @@ if((a == b)){
   //or this?
   console.log(a);
 }
+```
+```javascript
+function sayMonth(month){}
 ```
