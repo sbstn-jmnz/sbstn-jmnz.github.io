@@ -12,7 +12,7 @@ image_path: https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Javascript
   multi-line comment
 */
 
-/* You can't /* nest comments */ SyntaxError */
+//* You can't /* nest comments */ SyntaxError */
 ```
 # Variables
 Must start with a letter, undersocer(_), or dollar sign($)
@@ -22,6 +22,7 @@ var b = 0;
 console.log(b); //0
 console.log(a); //undefined
 console.log(a+b); //NaN
+
 ```
 # Constants
 `const` keyword same rules as variables, and cannot change value thriugh assigment or be redeclared, and has to be initialized to a value
