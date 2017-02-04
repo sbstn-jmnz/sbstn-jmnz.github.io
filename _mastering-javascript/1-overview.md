@@ -57,22 +57,20 @@ gravity = 9 // Uncaught TypeError: Assignment to constant variable.(…)
 Floating point arithmetic should be handled with care. Money values should be represented as cents
 ```javascript
 var aNumber = 123
-var aFloat =123.0
+var aFloat = 123.0
 0.1 + 0.3 // 0.4
 0.1 + 0.2 //0.30000000000000004
-(0.1+0.2) === 0.3 // false
+(0.1 + 0.2) === 0.3 // false
 Number.MAX_VALUE // 1.7976931348623157e+308
 Number.MIN_VALUE // 5e-324
 console.log(2*Number.MAX_VALUE)// Infinity
 console.log(Number.MIN_VALUE)// Didn't worked
-
 parseInt("30",10); //30
 parseInt("010",10); //10
 parseInt("010",8); //octal base 8
 parseInt("010",2); //binary 2
 + "4" // 4
 ```
-
 Handling the `NaN` case
 
 ```javascript
@@ -408,5 +406,146 @@ if((a == b)){
 ```
 
 ```javascript
-function sayMonth(month){}
+function sayMonth(month){
+  switch(month){
+    case 1: console.log("January");
+      break;
+    case 2: console.log("Feb");
+      break;
+    default:
+      console.log("Two month only");
+  }
+}
+sayMonth(2);// Feb
+sayMonth(3);// Two month only
+```
+Watch out!! This one is going to fall through
+```javascript
+ function debug(level, msg){
+   switch(level){
+     case "info": //intentional fall-through
+     case "warn":
+     case "debug": console.log(level+ ": " + msg);
+      break;
+    case "error": console.log(msg)
+   }
+ }
+
+ debug("info","Info Message"); // info: Info Message
+ debug("debug","Debug Message");// debug: Debug Message
+ debug("error","Fatal Exception");// Fatal Exception
+```
+
+# `while` and `do-while`
+```javascript
+var i = 0;
+while(i < 10){ i=i+1; console.log(i); }
+```
+Example of excecuted, then evaluated
+```javascript
+var i = 0;
+do { i=i+1; console.log(i); } while(i < 10);
+```
+
+# For loops
+```javascript
+for (var i = 0; i<5; i++){ console.log("Hello")} // Hello five times
+```
+
+```javascript
+var i = 0;
+for ( ;i<5; i++){console.log("Hi")} // Hi five times
+```
+```javascript
+for(var j = 0;;j++){
+  if(j>5){
+    break;
+  } else {
+    console.log('Hi');
+  }
+}
+// Hi six times
+```
+
+```javascript
+for( var k=0; k<5;){ console.log('Hi'); k++; } // Hi four times
+```
+
+No body loop
+```javascript
+var arr = [10,20,30];
+for(i=0; i < arr.length; arr[i++] = i*100);
+console.log(arr); // [100, 200, 300]
+```
+
+# Equality
+
+Use `===`, and not the weak comparation operator `==`. The weak operator tries to coerce the type before comparison, which can lead to unexpected outcomes. Also, implicit type coercion is costly in terms of performace. In general, stay away from weak equality.
+
+# Javascript Coercion
+Explicit Coercion or Casting
+```javascript
+var eigthySeven = 87
+console.log(eigth.toString()[1]); // 7
+```
+Types review
+```javascript
+typeof 1 === "number"; // true
+typeof "1" === "string"; // true
+typeof { age: 33 } === "object"; // true
+typeof Symbol() === "symbol"; // true
+typeof undefined === "undefined"; // true
+typeof true === "boolean"; // true
+```
+Explicit Coercion
+```javascript
+var t = 1;
+var v = String(t);
+console.log(typeof v);
+```
+Implicit Coercion
+```javascript
+var t = 1;
+var u= ""+t;
+console.log(typeof t); // number
+console.log(typeof u); // string
+var x = null;
+console.log(''+null); // nul
+console.log(typeof(''+null)); //string
+```
+JavaScript relies on `toString()` , `toNumber()` , and `toBoolean()` methods to do this internally.
+All primitives have a natural string form representation
+
+Javascript wraps these primitive objects in they wrappers by default, making possible to directl access the wrapper's methods and properties as if they were of the primitives.
+
+# WTF!
+
+```javascript
+typeof null === "object" //true
+```
+checking 100% null
+```javascript
+var x = null;
+if (!x && typeof x === "object"){ console.log("100% null") } // 100% null
+var y = false;
+if (!y && typeof y === "object"){ console.log("100% null") } // don't excecuted
+```
+
+```javascript
+f = function test(){
+  return 2;
+}
+console.log(typeof f === "function"); // true
+```
+Values have types, variables don't. Variables can hold any value at any time
+
+# `eval()` not recomended
+
+```javascript
+console.log(typeof eval(new String("1+1"))); // object
+console.log(eval(new String('1+1'))); // String {0: "1", 1: "+", 2: "1", length: 3, [[PrimitiveValue]]: "1+1"}
+console.log(eval("1+1")); // 2
+console.log(typeof eval('1+1')); // number
+var exp = new String("1+1");
+console.log(eval(exp.toString())); // 2
 ```
