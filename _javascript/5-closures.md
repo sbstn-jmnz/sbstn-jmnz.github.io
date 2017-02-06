@@ -5,7 +5,8 @@ image_path: https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Javascript
 permalink: /closures/
 ---
 
-A very basic closure. The function `testClosure` is called from the global scope and reach logic and variables from its scope. A function's local variable is not abailable onde the function's scope is closed!
+A very basic closure. The function `testClosure` is called from the global scope and reach logic and variables from its scope. A function's local variable is not available once the function's scope is closed!
+
 ```javascript
 function testClosure(){
   var x = 4; // local scope variable
@@ -14,6 +15,7 @@ function testClosure(){
 testClosure(); // 4
 console.log(x); // Uncaught ReferenceError: x is not defined(…)
 ```
+
 A closure wraps up the environment, binding necessary variables from other scopes.
 
 ```javascript
@@ -29,6 +31,7 @@ var anotherVar = testClosure();
 anotherVar(); // 4 we are reaching the x variable form a completly different scope.
 ```
 Example DRYing common functionality
+
 ```javascript
 function ticketMaker(band) {
     return function (name){
@@ -47,6 +50,7 @@ rafagaTicketMaker('Fernando');
 americoTicketMaker('Mono');
 primusTicketMaker('Pervers');
 ```
+
 Modify bounded variables in the background, great example. Each returned function has it own `fanNumber` variable
 
 ```javascript
@@ -70,6 +74,7 @@ function ticketMaker(band) {
 ```
 # Loops and Closures
 Warning!!, bounded valiables get bound in the last minute. In this case `i` will be the same value everytime the function gets called. Because the for loop checks all the times
+
 ```javascript
 function getArrayPos(value,array) {
   var function_holder;
@@ -87,6 +92,7 @@ var getPos = getArrayPos("str2",testArray)
 getPos(); // => Value str2 in position 4 WHAT!!!!
 ```
 Solution:
+
 ```javascript
 function getArrayPos(value,array) {
   for (var i = 0; i < array.length; i++) {
@@ -102,6 +108,7 @@ var getPos = getArrayPos("str2",testArray)
 getPos(); // => Value str2 in position 1
 ```
 Refactoring
+
 ```javascript
 function getArrayPos(array){
   return function(value) { // The complete iterator over the array is returned
@@ -129,6 +136,7 @@ for(var i=1; i<=5; i++){
 
 Solution:
 The use of an iife inside each iteration creates a new scope for each iteration, and updates de local copy with the correct value. Horrible code!
+
 ```javascript
 for (var i=1; i <= 5; i++) {
   (function(j){
