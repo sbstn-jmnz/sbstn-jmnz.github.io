@@ -492,12 +492,14 @@ console.log(eigth.toString()[1]); // 7
 Types review
 
 ```javascript
+
 typeof 1 === "number"; // true
 typeof "1" === "string"; // true
 typeof { age: 33 } === "object"; // true
 typeof Symbol() === "symbol"; // true
 typeof undefined === "undefined"; // true
 typeof true === "boolean"; // true
+
 ```
 
 Explicit Coercion
