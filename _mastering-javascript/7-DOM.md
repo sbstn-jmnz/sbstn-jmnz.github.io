@@ -2,7 +2,7 @@
 layout: page
 title: DOM Manipulation and Events
 image_path: https://c1.staticflickr.com/1/33/66281384_4997df55b7.jpg
-permalink: /js-testing/
+permalink: /dom/
 ---
 
 As Rubyists when we think of testing code, we don't imagine the amount of task that we need to address in order to get our test suite up-and running (a descent automated test suite). Form the beginning we have Minitest as the default testing framework in the Ruby 2.0 Standard Library and the default test framework for Rails. Also we have RSpec, another great testing framework with all the necessary pieces ready to get an automated test suite. We don't test our code once, we test it all the time. That's why our test suite needs to be light, fast and automated.
@@ -21,7 +21,7 @@ For unit test, the common tool is [Karma](https://karma-runner.github.io/1.0/ind
 
 Both tools will require a *\*.conf.js* file which will act as the test suite director when invoked by Grunt or Gulp (task runners).
 
-The good news is that both, Karma unit test and Protractor end-to-end test use the Jasmine syntax, which is inspired by RSpec.  
+The good news is that both, Karma unit test and Protractor end-to-end test use the Jasmine syntax, which is inspired by RSpec.
 
 Depending on which came first in our task runner, each set of test will execute separately. Karma will load a headless browser, generally PhantomJS, and Protractor will load Sellenium WebDriver to set up a real browser which we can see in action in our local development environment.
 
@@ -31,4 +31,4 @@ Maybe that's one of the main reasons why [Thoughtworks](https://www.thoughtworks
 
 But there are a lot of Angular apps out there that need support and it our mission to build a healthy test suite before touching the code.
 
-An excellent course, that covers step by step all the configuration needed is found on [Tuts+](https://code.tutsplus.com/courses/angularjs-for-test-driven-development)          
+An excellent course, that covers step by step all the configuration needed is found on [Tuts+](https://code.tutsplus.com/courses/angularjs-for-test-driven-development)

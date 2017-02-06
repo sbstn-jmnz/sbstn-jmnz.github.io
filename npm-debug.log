@@ -1,0 +1,85 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'jshint',
+1 verbose cli   '–g' ]
+2 info using npm@3.10.9
+3 info using node@v7.2.0
+4 verbose config Skipping project config: /home/sbstn/.npmrc. (matches userconfig)
+5 silly loadCurrentTree Starting
+6 silly install loadCurrentTree
+7 silly install readLocalPackageData
+8 silly fetchPackageMetaData jshint
+9 silly fetchPackageMetaData –g
+10 silly fetchNamedPackageData jshint
+11 silly mapToRegistry name jshint
+12 silly mapToRegistry using default registry
+13 silly mapToRegistry registry https://registry.npmjs.org/
+14 silly mapToRegistry data Result {
+14 silly mapToRegistry   raw: 'jshint',
+14 silly mapToRegistry   scope: null,
+14 silly mapToRegistry   escapedName: 'jshint',
+14 silly mapToRegistry   name: 'jshint',
+14 silly mapToRegistry   rawSpec: '',
+14 silly mapToRegistry   spec: 'latest',
+14 silly mapToRegistry   type: 'tag' }
+15 silly mapToRegistry uri https://registry.npmjs.org/jshint
+16 silly fetchOtherPackageData –g
+17 silly cache add args [ '–g', null ]
+18 verbose cache add spec –g
+19 silly cache add parsed spec Result {
+19 silly cache add   raw: '–g',
+19 silly cache add   scope: null,
+19 silly cache add   escapedName: null,
+19 silly cache add   name: null,
+19 silly cache add   rawSpec: '–g',
+19 silly cache add   spec: '/home/sbstn/Desktop/Programing/sbstnjmnz.com/–g',
+19 silly cache add   type: 'local' }
+20 error addLocal Could not install /home/sbstn/Desktop/Programing/sbstnjmnz.com/–g
+21 silly fetchPackageMetaData Error: ENOENT: no such file or directory, open '/home/sbstn/Desktop/Programing/sbstnjmnz.com/–g'
+21 silly fetchPackageMetaData  error for –g { Error: ENOENT: no such file or directory, open '/home/sbstn/Desktop/Programing/sbstnjmnz.com/–g'
+21 silly fetchPackageMetaData   errno: -2,
+21 silly fetchPackageMetaData   code: 'ENOENT',
+21 silly fetchPackageMetaData   syscall: 'open',
+21 silly fetchPackageMetaData   path: '/home/sbstn/Desktop/Programing/sbstnjmnz.com/–g' }
+22 verbose request uri https://registry.npmjs.org/jshint
+23 verbose request no auth needed
+24 info attempt registry request try #1 at 5:09:43 PM
+25 verbose request id 9cdbbd85a825fa1e
+26 verbose etag W/"5843496b-1d6a0"
+27 verbose lastModified Sat, 03 Dec 2016 22:38:35 GMT
+28 http request GET https://registry.npmjs.org/jshint
+29 info retry will retry, error on last attempt: TypeError: The header content contains invalid characters
+30 info attempt registry request try #2 at 5:09:53 PM
+31 verbose etag W/"5843496b-1d6a0"
+32 verbose lastModified Sat, 03 Dec 2016 22:38:35 GMT
+33 http request GET https://registry.npmjs.org/jshint
+34 info retry will retry, error on last attempt: TypeError: The header content contains invalid characters
+35 info attempt registry request try #3 at 5:10:53 PM
+36 verbose etag W/"5843496b-1d6a0"
+37 verbose lastModified Sat, 03 Dec 2016 22:38:35 GMT
+38 http request GET https://registry.npmjs.org/jshint
+39 silly get cb [ 304, undefined ]
+40 verbose etag https://registry.npmjs.org/jshint from cache
+41 verbose get saving jshint to /home/sbstn/.npm/registry.npmjs.org/jshint/.cache.json
+42 verbose correctMkdir /home/sbstn/.npm correctMkdir not in flight; initializing
+43 silly rollbackFailedOptional Starting
+44 silly rollbackFailedOptional Finishing
+45 silly runTopLevelLifecycles Finishing
+46 silly install printInstalled
+47 verbose stack Error: ENOENT: no such file or directory, open '/home/sbstn/Desktop/Programing/sbstnjmnz.com/–g'
+48 verbose cwd /home/sbstn/Desktop/Programing/sbstnjmnz.com
+49 error Linux 3.13.0-63-generic
+50 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "jshint" "–g"
+51 error node v7.2.0
+52 error npm  v3.10.9
+53 error path /home/sbstn/Desktop/Programing/sbstnjmnz.com/–g
+54 error code ENOENT
+55 error errno -2
+56 error syscall open
+57 error enoent ENOENT: no such file or directory, open '/home/sbstn/Desktop/Programing/sbstnjmnz.com/–g'
+58 error enoent ENOENT: no such file or directory, open '/home/sbstn/Desktop/Programing/sbstnjmnz.com/–g'
+58 error enoent This is most likely not a problem with npm itself
+58 error enoent and is related to npm not being able to find a file.
+59 verbose exit [ -2, true ]

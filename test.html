@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>This test</title>
+  <script type="text/javascript">
+
+  function testF(){ return this; }
+
+  console.log(testF()); // Window
+
+  var testFCopy = testF;
+
+  console.log(testFCopy()); // Window
+
+  var testObj = {
+      testObjFunc: testF
+  };
+
+  console.log(testObj.testObjFunc ()); // Object
+
+  </script>
+</head>
+<body>
+</body>
+</html>

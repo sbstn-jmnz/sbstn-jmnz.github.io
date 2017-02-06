@@ -1,69 +1,319 @@
 ---
 layout: page
-title: Functions, Closures, and Modules 
+title: Functions, Closures, and Modules
 image_path: https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Javascript_badge.svg/1000px-Javascript_badge.svg.png
-permalink: /fnctns-and-cnstrctrs/
+permalink: /fn-closures-modules/
 ---
 
-Object orientation and class inheritance are distinct design concepts. Many of us conflate them because popular languages like Java and Ruby use both. JavaScript is object-oriented, but lacks classes. But, like we said in the previous post, there are some sort of patterns that help us achieve similar behavior.  Let's look at some code...
-
+function statement
 ```javascript
-    var Record = function(title,year,band) {
-
-      this.title = title;
-      this.year = year;
-      this.band = band;
-      //Yep, an instance method!!
-      this.full_title = function() {
-        return (this.title + ' (' + this.band + ' ' + this.year + ')');
-      };
-    };
+function add(a,b){
+  return b+a;
+}
 ```
-
+function expressions
+```javascript
+var add = function(a,b){
+  return a+b;
+}
+```
+```javascript
+var factorial = function factorial(n) {
+  if(n <= 1) return 1;
+  return n * factorial(n -1);
+};
+console.log(factorial(3));
+```
+self-invoking function expressions
+```javascript
+(function() {
+  console.log("Hello There");
+})();
+```
+# Functions example
 ```javascript
 
-  function Record(title,year,band){
-    //Same as the above function
+var validateDateForAge = function(data) {
+  person = data();
+  console.log(person);
+  if (person.age < 1 || person.age > 99){
+    return true
+  }else{
+    return false;
+  }
+};
+
+var errorHandlerForAge = function(error){
+  console.log("Error with age");
+};
+
+function parseRequest(data, validateData, errorHandler){
+  var error = validateData(data);
+  if (!error){
+    console.log("Ok");
+  }else{
+    errorHandler();
+  }
+};
+
+var generateDataForDrummer = function(){
+  return {
+  name: "Neil Peart",
+  age: Math.floor(Math.random()* (100 -1)) + 1
   };
-```
-The first snippet shows a new way (for Rubyists) of defining functions, this is possible because functions are *first-class objects*. `Movie` is just a simple variable whose value happens to be a function. The second snippet looks familiar but it is declared directly on the global namespace. In general, as a best practice, is better to create just a few global variables and our JavaScript functions will be values of properties of those objects.
+} ;
+var generateDataForBassPlayer = function(){
+  return {
+  name: "Felipe Gomez",
+  age: Math.floor(Math.random()* (100 -1)) + 1
+  };
+} ;
 
-So let's create a new record...
+parseRequest(generateDataForBassPlayer, validateDateForAge, errorHandlerForAge);
+parseRequest(generateDataForDrummer, validateDateForAge, errorHandlerForAge);
+```
+# IIFE
 
 ```javascript
-  nevermind = new Record('Nevermind',1991,'Nirvana');
-  nevermind.full_title; // => function() {...}
-  nevermind.full_title(); // => "Nevermind (Nirvana 1992)"
+(function() {
+  var a = 6;
+  console.log(a);
+  })();
 ```
-When calling `Record` with the `new` keyword, the value of `this` in the function body will be a new JavaScript object that will be returned by the function. This is very similar to `self` inside the `initialize` constructor method in Ruby. The returned object will have the declared properties which one of them is also a function. The different behavior is when we call `nevermind.full_title;` which is the function itself. In order to call it we must use `nevermind.full_title()`.
-
-One important think to keep in mind it is that, even though this example looks like we are dealing with classes, and instance methods, there is nothing in the function that makes it a constructor, it is just a simple function. All the magic is done by the keyword `new`, which creates a new object. The common convention is to capitalize the first letter of the functions that are intended to be constructors; therefore, using the `new` keyword. Lets see what happens if we call the Record method without the `new` keyword.
+ Douglas Crockfords IIFE
 
 ```javascript
-  reload = Record('Reload','1997', 'Metallica')
-  reload.title; // =>Uncaught TypeError: Cannot read property 'title' of undefined(…)
-  reload.full_title(); // => Uncaught TypeError: Cannot read property 'full_title' of undefined(…)
+(function() {
+  var a = 6;
+  console.log(a);
+}());
 ```
-
-The above code is totally legal, but it behavior is completely different than the expected. First, the `this` keyword in the function is no longer a new instance of the prototype, in fact it is the *global object* itself, because it is in the most global scope. Then, the value of `reload` is the returned value form the Record function, which happens to be `undefined` unless an explicit return statement is included in the Record object itself.    
-
+With parameters
 ```javascript
-  title; // => "Reload"
-  full_title; // => "function() {...}"
-  full_title(); // => "Reload (Metallica 1997)"
+(function(b) {
+  var a = 2;
+  console.log( a + b);
+})(5);
 ```
-The problem is that the global object is responsible for defining important constants and other parts of the JavaScript environment(Infinity ,Nan ,null). If the host environment is the browser, the global object is the the data structure that represents the browser window.
-
-One thing to keep in mind related to constructor functions is the  `Boolean` function. The naming conventions says that we should use it as a constructor, but it is not the case, and it is advised to use it like a regular function to [convert non-boolean values to boolean values](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) instead of new Boolean objects. Like so,
-
+# WTF AGAIN
+variables and function declarations are moved up during compilation fase(hoisting). Assignment or other logic are left in place.
 ```javascript
-var x = Boolean(NaN) // => false
-if (x) {
-  //won't get executed
+a=1;
+var a; // is this line hoisted to the top first?
+console.log(a); // 1
+```
+function declaration hoisting
+```javascript
+foo();
+function foo(){  //hoisted. This way can be used before defining it
+  console.log(a); //undefined
+  var a = 1; // hoisted to the top of the foo() scope
 }
-var x = new Boolean(NaN) // => Boolean {[[PrimitiveValue]]: false}
-if (x) {
-  console.log("Nightmare")
+```
+Hoisting is made by scopes. So variables and function declaration are hoisted te the top of their scope
+
+```javascript
+functionOne();
+var functionOne = function(){
+  console.log("FN1") // Error!
+};
+functionTwo();
+function functionTwo(){
+  console.log("functionTwo");
+};
+```
+function declarations are hoisted first, then variable declarations
+
+# Danger Zone **Never** do this!! Browsers behave differently
+```javascript
+if (true) {
+  function say(){ return "true"}
+}else {
+  function say(){ return "false"}
+}
+say();
+```
+better apprach with function expresions
+```javascript
+var sayMoo;
+if (true) {
+  sayMoo = function(){return 'true'};
+} else {
+  sayMoo = function(){return 'false'};
+};
+sayMoo();
+```
+
+function declatations are allowed to appear only in the program or function body.
+Blocks can only contain statemens and not function declarations. It is always advisible to not use function declarations in conditional blocks
+
+# Arguments parameter
+```javascript
+var logSum = function(){
+  var i, total = 0;
+  for (i =0; i < arguments.length; i += 1) {
+    total += arguments[i];
+  };
+  console.log(total);
+};
+logSum(1,2,3,4,5,6); // 21
+```
+Convert the arguments parameter to a real array
+```javascript
+  var args = Array.prototype.slice.call(arguments);
+```
+
+# Constructor preview
+
+```javascript
+var Person = function(name){
+  this.name = name;
+};
+Person.prototype.greet = function(){
+  return this.name;
+};
+var robert = new Person("Albert F. Collins")
+console.log(robert.greet());
+```
+
+# Function Methods
+As objects they have some methods, like `apply()` with two parameters, the first provides the context, and the other and array of values used as invocation arguments. `call()` is almost the same, but arguments are passed directlyin the arguments list.
+
+# Anonymous functions in objects
+```javascript
+var momis = {
+  say: function(){
+    console.log('Hola Sebi');
+  }
+}
+momis.say();
+```
+
+# Anonymous functions as a parameter to other function
+```javascript
+function eventHandler(event){
+  event();
+}
+eventHandler(function(){
+  console.log("Event fired!");
+})
+```
+
+# Closures
+Closure is the scope created when a function is declared. It allows the function to access and manipulate variables that are external to this function. In other words, they allow a function to access all the variables, and other functions, that are in scope wjen the function itself is declared.
+
+```javascript
+var outer = "Outer";
+var copy;
+function outerFn(){
+  var inner = "Inner"
+  function innerFn(){
+    console.log(outer);
+    console.log(inner);
+  }
+  copy = innerFn;
+}
+outerFn(); //Outer
+copy(); // Inner
+innerFn(); // innerFn is not defined
+```
+
+All variables in an outer scope are included in the scope, enven if they are declared after the function.
+
+```javascript
+var outer = 'outer';
+var copy;
+function outerFn(){
+var inner = "inner";
+  function innerFn(params){
+    console.log(outer);
+    console.log(inner);
+    console.log(params);
+    console.log(magic);
+  };
+  copy = innerFn;
+};
+console.log(magic); // magic is not defined
+var magic = "Magic";
+outerFn();
+copy('copy');
+```
+# Common closure patterns
+
+```javascript
+function delay(message){
+  setTimeout(function timerFn(){
+    console.log(message); // The scope for timerFn can access the message variable
+  },1000);
+}
+delay('Hello there')
+```
+
+# To allow encapsulation
+
+```javascript
+function PrivateTest(){
+var results = 0;
+  this.getResults = function(){ return results; };
+  this.setResults = function(){ results++; }
+}
+var private = new PrivateTest();
+private.setResults();
+console.log(private.results); //undefined
+console.log(private.getResults());// 1
+```
+
+# Loops and closures
+Wrong implementation
+```javascript
+for(var i=1; i<=5; i++){
+  setTimeout( function delay(){
+    console.log(i);
+  },i*100);
 }
 ```
-In the next entry we'll explore the [Prototypal inheritance]({{ site.baseurl }}{% link _javascript/3-prototypal-inheritance.md %})
+Right way
+The use of an iife inside each iteration creates a new scope for each iteration, and updates de local copy with the correct value.
+```javascript
+for (var i=1; i <= 5; i++) {
+  (function(j){
+    setTimeout( function delay(){
+      console.log(j);
+    }, j*100);
+  })(i);
+}
+```
+# Modules
+
+```javascript
+var moduleName = function(){
+  // private state
+  // private functions
+  return {
+    // public state
+    // return public variables
+  }
+}
+```
+
+```javascript
+var   superModule = (function(){
+  var secret = "supersecretkey";
+  var password = 'duke';
+
+    function getSecret() {
+      console.log( secret);
+    };
+
+    function getPassword() {
+      console.log(password);
+    }
+
+  return {
+    getSecret: getSecret,
+    getPassword: getPassword
+  };
+}());
+superModule.getSecret();
+superModule.getPassword();
+```
