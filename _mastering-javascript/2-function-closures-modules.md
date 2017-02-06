@@ -156,6 +156,7 @@ function declatations are allowed to appear only in the program or function body
 Blocks can only contain statemens and not function declarations. It is always advisible to not use function declarations in conditional blocks
 
 # Arguments parameter
+Hint! Never name a parameter arguments. This would overide the original one.
 
 ```javascript
 var logSum = function(){
