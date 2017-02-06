@@ -6,8 +6,6 @@ categories: misc
 ![image-title-here](http://ind5.ccio.co/HA/JD/VE/bb4cec84d2d5c32c251c143fdb23952d.jpg?iw=300)
 {:class="img-responsive"}
 
-
-
 Lately I've been treated as an unadapted person by my friends because of my rejection to this message app. They say that a techie professional (as I consider myself) must use this application and they always ask me "Why don't you use WhatsApp?", so here is my answer.
 
 In economics there is the well known Law of Diminishing Returns, which simply states that at some point the levels of profits gained is less than the amount of money or energy invested.

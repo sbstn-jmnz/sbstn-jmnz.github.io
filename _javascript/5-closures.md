@@ -6,6 +6,7 @@ permalink: /closures/
 ---
 
 A very basic closure. The function `testClosure` is called from the global scope and reach logic and variables from its scope. A function's local variable is not abailable onde the function's scope is closed!
+
 ```javascript
 function testClosure(){
   var x = 4; // local scope variable
@@ -14,6 +15,7 @@ function testClosure(){
 testClosure(); // 4
 console.log(x); // Uncaught ReferenceError: x is not defined(…)
 ```
+
 A closure wraps up the environment, binding necessary variables from other scopes.
 
 ```javascript
