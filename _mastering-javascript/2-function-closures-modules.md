@@ -27,6 +27,7 @@ var factorial = function factorial(n) {
 console.log(factorial(3));
 ```
 self-invoking function expressions
+
 ```javascript
 (function() {
   console.log("Hello There");
@@ -296,6 +297,7 @@ for (var i=1; i <= 5; i++) {
   })(i);
 }
 ```
+
 # Modules
 
 ```javascript
