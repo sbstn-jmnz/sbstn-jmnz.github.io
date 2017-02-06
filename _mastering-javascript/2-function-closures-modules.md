@@ -5,13 +5,15 @@ image_path: https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Javascript
 permalink: /fn-closures-modules/
 ---
 
-function statement
+A function statement
+
 ```javascript
 function add(a,b){
   return b+a;
 }
 ```
-function expressions
+Function expressions
+
 ```javascript
 var add = function(a,b){
   return a+b;
@@ -31,6 +33,7 @@ self-invoking function expressions
 })();
 ```
 # Functions example
+
 ```javascript
 
 var validateDateForAge = function(data) {
@@ -89,6 +92,7 @@ parseRequest(generateDataForDrummer, validateDateForAge, errorHandlerForAge);
 }());
 ```
 With parameters
+
 ```javascript
 (function(b) {
   var a = 2;
@@ -97,12 +101,14 @@ With parameters
 ```
 # WTF AGAIN
 variables and function declarations are moved up during compilation fase(hoisting). Assignment or other logic are left in place.
+
 ```javascript
 a=1;
 var a; // is this line hoisted to the top first?
 console.log(a); // 1
 ```
 function declaration hoisting
+
 ```javascript
 foo();
 function foo(){  //hoisted. This way can be used before defining it
@@ -134,6 +140,7 @@ if (true) {
 say();
 ```
 better apprach with function expresions
+
 ```javascript
 var sayMoo;
 if (true) {
@@ -148,6 +155,7 @@ function declatations are allowed to appear only in the program or function body
 Blocks can only contain statemens and not function declarations. It is always advisible to not use function declarations in conditional blocks
 
 # Arguments parameter
+
 ```javascript
 var logSum = function(){
   var i, total = 0;
@@ -159,6 +167,7 @@ var logSum = function(){
 logSum(1,2,3,4,5,6); // 21
 ```
 Convert the arguments parameter to a real array
+
 ```javascript
   var args = Array.prototype.slice.call(arguments);
 ```
@@ -180,6 +189,7 @@ console.log(robert.greet());
 As objects they have some methods, like `apply()` with two parameters, the first provides the context, and the other and array of values used as invocation arguments. `call()` is almost the same, but arguments are passed directlyin the arguments list.
 
 # Anonymous functions in objects
+
 ```javascript
 var momis = {
   say: function(){
@@ -190,6 +200,7 @@ momis.say();
 ```
 
 # Anonymous functions as a parameter to other function
+
 ```javascript
 function eventHandler(event){
   event();
@@ -265,6 +276,7 @@ console.log(private.getResults());// 1
 
 # Loops and closures
 Wrong implementation
+
 ```javascript
 for(var i=1; i<=5; i++){
   setTimeout( function delay(){
@@ -274,6 +286,7 @@ for(var i=1; i<=5; i++){
 ```
 Right way
 The use of an iife inside each iteration creates a new scope for each iteration, and updates de local copy with the correct value.
+
 ```javascript
 for (var i=1; i <= 5; i++) {
   (function(j){

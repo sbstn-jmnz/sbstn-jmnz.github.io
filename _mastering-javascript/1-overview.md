@@ -499,7 +499,6 @@ typeof { age: 33 } === "object"; // true
 typeof Symbol() === "symbol"; // true
 typeof undefined === "undefined"; // true
 typeof true === "boolean"; // true
-
 ```
 
 Explicit Coercion
