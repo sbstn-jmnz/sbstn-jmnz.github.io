@@ -484,6 +484,7 @@ Use `===`, and not the weak comparation operator `==`. The weak operator tries t
 
 # Javascript Coercion
 Explicit Coercion or Casting
+
 ```javascript
 var eigthySeven = 87
 console.log(eigth.toString()[1]); // 7
@@ -498,12 +499,14 @@ typeof undefined === "undefined"; // true
 typeof true === "boolean"; // true
 ```
 Explicit Coercion
+
 ```javascript
 var t = 1;
 var v = String(t);
 console.log(typeof v);
 ```
 Implicit Coercion
+
 ```javascript
 var t = 1;
 var u= ""+t;
@@ -523,7 +526,9 @@ Javascript wraps these primitive objects in they wrappers by default, making pos
 ```javascript
 typeof null === "object" //true
 ```
+
 checking 100% null
+
 ```javascript
 var x = null;
 if (!x && typeof x === "object"){ console.log("100% null") } // 100% null
@@ -537,6 +542,7 @@ f = function test(){
 }
 console.log(typeof f === "function"); // true
 ```
+
 Values have types, variables don't. Variables can hold any value at any time
 
 # `eval()` not recomended
