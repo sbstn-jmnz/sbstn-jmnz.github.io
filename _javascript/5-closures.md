@@ -5,7 +5,7 @@ image_path: https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Javascript
 permalink: /closures/
 ---
 
-A very basic closure. The function `testClosure` is called from the global scope and reach logic and variables from its scope. A function's local variable is not available once the function's scope is closed!
+A very basic closure. The function `testClosure` is called from the global scope and reach logic and variables from its scope. A function's local variable is not abailable onde the function's scope is closed!
 
 ```javascript
 function testClosure(){
