@@ -22,4 +22,4 @@ In reality most most business engineers just use Excell and maybe Access, but ve
   * What are my competitors selling and to whom?
   * Do they purchase something that I sold at a better price? Who? When?
 
-And the list can keep going. So go ahead and spread the news. There is no better time than now!  
+And the list can keep going. So go ahead and spread the news.   
