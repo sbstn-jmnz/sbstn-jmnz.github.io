@@ -22,7 +22,7 @@ GEM
       pathutil (~> 0.9)
       rouge (~> 1.7)
       safe_yaml (~> 1.0)
-    jekyll-coffeescript (1.0.2)
+    jekyll-coffeescript (1.1.1)
       coffee-script (~> 2.2)
       coffee-script-source (~> 1.11.1)
     jekyll-feed (0.8.0)
@@ -58,7 +58,7 @@ DEPENDENCIES
   minima (~> 2.0)
 
 RUBY VERSION
-   ruby 2.4.0p0
+   ruby 2.5.1p57
 
 BUNDLED WITH
-   1.15.1
+   1.16.2

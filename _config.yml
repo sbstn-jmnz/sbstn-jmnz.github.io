@@ -1,12 +1,12 @@
 title: Sebastian Jimenez
-desc: Software Engineer
+desc: Software Developer & Engineer
 email: sbstn.jmnz@yahoo.com
 description: > # this means to ignore newlines until "baseurl:"
   Personal site about software and industrial engeneering.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://sbstnjmnz.com" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  sbstn-jmnz
-linkedin_username: sebastián-jiménez-olguín-695a8828
+linkedin_username: sbstnjmnz
 google_analytics: UA-58311145-2
 collections:
     javascript:
@@ -14,6 +14,10 @@ collections:
     solid:
       output: true
     mastering-javascript:
+      output: true
+    bitcoin-and-criptocurrencies:
+      output: true
+    blockchain-technologies:
       output: true
 
 sass:
