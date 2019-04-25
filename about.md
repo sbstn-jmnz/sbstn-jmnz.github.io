@@ -4,8 +4,8 @@ title: About Me
 permalink: /about/
 ---
 
-I'm a software developer and engineer from Chile. I can help you build scalable software
-better with front-end frameworks and Ruby back-end.
+I'm a wanna be software developer and engineer from Chile. I can help you build scalable web apps and services 
+with front-end frameworks and Ruby back-end.
 
 I have experience in web development projects with the following practices and technologies:
 
