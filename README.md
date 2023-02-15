@@ -15,3 +15,10 @@ Jekyll requires the following:
 ## Local Development
 
 `bundle exec jekyll serve`
+
+## When address is already in use
+
+ps aux | grep jekyll 
+kill -9 1234 
+
+where "1234" is the PID. 

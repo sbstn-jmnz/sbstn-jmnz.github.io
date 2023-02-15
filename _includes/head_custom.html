@@ -1,0 +1,19 @@
+{% vite_client_tag %}
+
+{% vite_stylesheet_tag application %}
+{% vite_javascript_tag application %}
+
+{% if jekyll.environment == "production" %}
+  <script src="{{ site.baseurl | prepend: site.url }}/coi-serviceworker.js"></script>
+{% endif %}
+
+{% assign math = page.math | default: layout.math | default: site.math %}
+
+{% case math %}
+  {% when "katex" %}
+    {% include katex.html %}
+{% endcase %}
+
+{% if jekyll.environment == 'production' and site.google_analytics %}
+  {% include google-analytics.html %}
+{% endif %}

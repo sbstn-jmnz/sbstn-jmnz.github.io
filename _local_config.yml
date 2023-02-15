@@ -1,0 +1,13 @@
+plugins:
+  - jekyll/vite
+baseurl: /
+theme: "just-the-docs"
+exclude:
+  - bin
+  - config
+  - vite.config.ts
+
+show_drafts: true
+incremental: true
+profile: true
+
