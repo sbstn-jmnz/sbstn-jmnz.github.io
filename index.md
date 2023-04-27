@@ -2,15 +2,21 @@
 layout: home
 ---
 
-# Hello Runno
+<form class="container" netlify="true">
+  <h2>Escríbeme tus comentarios</h2>
+  <div class="mb-3">
+    <label for="fullnameInput" class="form-label">Tu Nombre completo</label>
+    <input type="text" class="form-control" id="fullnameInput" name="fullName">
+  </div>
+  <div class="mb-3">
+    <label for="commentInput" class="form-label">Comentario</label>
+    <textarea class="form-control" id="commentInput" name="comment"></textarea>
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
 
-Runno runs quick.js. A lightweight JavaScript Engine
 
-<runno-run runtime="quickjs" editor controls>
-<pre>
-console.log("Hola Runno")
-</pre>
-</runno-run>
 
 ## Hello Bob
 
