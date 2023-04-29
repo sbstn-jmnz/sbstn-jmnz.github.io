@@ -1,2 +1,2 @@
 import "../js/codemirror";
-import "../js/editor-js.js";
+import "../js/editor-js";

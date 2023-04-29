@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>{{ page.title }}</title>
+  {% vite_client_tag %}
+  {% vite_stylesheet_tag codemirror-py %}
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    .cm-editor {
+      height: 359px;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="static-py" style="display: none;">
+    {{ content }}
+  </section>
+  <section id="live" class="live hidden">
+    <header class="output-header border-rounded-top-no-bottom">
+      <h4 class="output-heading">
+        <img src="/assets/img/python-logo.jpeg" alt="python logo" width="20">
+        {{ page.title }}
+      </h4>
+    </header>
+    <div id="editor" class="editor"></div>
+    <div class="output-container">
+      <div class="buttons-container">
+        <button id="execute" class="button run" type="button">
+          Run &rsaquo;
+        </button>
+        <button id="reset" type="button" class="button">Reset</button>
+      </div>
+      <textarea id="console" class="output"></textarea>
+    </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.23.1/full/pyodide.js"></script>
+  {% vite_javascript_tag python %}
+
+</body>
+
+</html>

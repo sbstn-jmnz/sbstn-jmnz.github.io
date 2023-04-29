@@ -22,7 +22,8 @@ exclude:
   - exe
   - Rakefile
   - Procfile.dev
-
+  - tmp
+  
 mermaid:
   # Version of mermaid library
   # Pick an available version from https://cdn.jsdelivr.net/npm/mermaid/
@@ -71,3 +72,4 @@ just_the_docs:
       # Exclude the collection from the search
       # Supports true or false (default)
       # search_exclude: true
+  

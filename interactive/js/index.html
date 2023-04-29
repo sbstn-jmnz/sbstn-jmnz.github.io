@@ -1,0 +1,35 @@
+---
+layout: bob
+title: Some interactive example
+nav_exclude: true
+height: 470
+scripts:
+---
+
+const sqrtPoints = (num) => {
+let answer = num
+let counter = 1
+
+let x = []
+let y = []
+
+while(answer*answer != num){
+x.push(counter)
+y.push(answer)
+answer = (num/answer + answer) / 2
+counter += 1
+}
+
+return {
+x,
+y,
+mode: 'markers',
+name: `Raiz de ${num}`
+}
+};
+
+const layout = {
+title: "Convergencia de la función squareRoot "
+}
+const data = [sqrtPoints(4), sqrtPoints(9), sqrtPoints(25)];
+Plotly.newPlot("gd", data, layout)
